@@ -33,24 +33,39 @@
 
     header { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid #e5e7eb; }
     .nav-wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 4rem; }
-    .nav-logo img { width: 280px; height: auto; }
-    nav.desktop { display: none; align-items: center; gap: 2rem; }
-    nav.desktop a { font-size: .875rem; font-weight: 500; color: #1a1a1a; transition: color .15s; }
-    nav.desktop a:hover { color: #D72B2B; }
-    .btn-demo { background: #D72B2B; color: #fff; padding: .5rem 1.25rem; border-radius: .25rem; font-weight: 600; font-size: .875rem; transition: background .15s; }
-    .btn-demo:hover { background: #991b1b; }
-    @media (min-width: 768px) { nav.desktop { display: flex; } .mobile-menu-btn { display: none; } }
+    /* The nav carries six links plus both CTAs, so everything scales with the viewport
+       and refuses to wrap. Below 768px only the Build button stays. */
+    .nav-logo img { max-height: 3.25rem; width: clamp(9rem, 22vw, 17rem) !important; height: auto; }
+    nav.desktop { display: flex; align-items: center; gap: clamp(.75rem, 1.7vw, 2rem); }
+    nav.desktop a { font-size: clamp(.72rem, 1.05vw, .875rem); font-weight: 500; color: #1a1a1a; transition: color .15s; white-space: nowrap; }
+    nav.desktop a:hover { color: #1E305F; }
+    .btn-demo { background: #1E305F; color: #fff; padding: .5rem clamp(.6rem, 1.2vw, 1.25rem); border-radius: .25rem; font-weight: 600; font-size: clamp(.72rem, 1.05vw, .875rem); transition: background .15s; white-space: nowrap; flex: 0 0 auto; }
+    .btn-demo:hover { background: #152242; }
+    nav.desktop a:not(.btn-demo) { display: none; }
+    @media (min-width: 768px) { nav.desktop a:not(.btn-demo) { display: inline-flex; } .mobile-menu-btn { display: none; } }
     .mobile-menu-btn { padding: .5rem; background: none; border: none; }
 
-    .hero-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: #D72B2B; font-weight: 600; margin-bottom: 1.5rem; }
+    .hero-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: #7F98D7; font-weight: 600; margin-bottom: 1.5rem; }
     .hero h1 { font-size: 2.25rem; font-weight: 700; letter-spacing: -.025em; color: #fff; margin-bottom: 1.5rem; line-height: 1.25; }
     .hero p { font-size: 1.125rem; color: #d1d5db; max-width: 56rem; margin: 0 auto 2.5rem; line-height: 1.5em; }
-    .btn-primary { display: inline-block; background: #D72B2B; color: #fff; padding: .75rem 2rem; border-radius: .25rem; font-weight: 600; font-size: 1rem; transition: background .15s; }
-    .btn-primary:hover { background: #991b1b; }
-    .btn-primary-lg { display: inline-block; background: #D72B2B; color: #fff; padding: 1rem 2.5rem; border-radius: .25rem; font-weight: 600; font-size: 1.125rem; transition: background .15s; }
-    .btn-primary-lg:hover { background: #991b1b; }
+    /* Every primary button on this site sits on a dark navy section, so the brand navy
+       would disappear into the ground. They invert instead: the light tint carries the
+       button, deep navy carries the label. */
+    .btn-primary { display: inline-block; background: #7F98D7; color: #0A1628; padding: .75rem 2rem; border-radius: .25rem; font-weight: 600; font-size: 1rem; transition: background .15s; }
+    .btn-primary:hover { background: #9BAFE1; }
+    .btn-primary-lg { display: inline-block; background: #7F98D7; color: #0A1628; padding: 1rem 2.5rem; border-radius: .25rem; font-weight: 600; font-size: 1.125rem; transition: background .15s; }
+    .btn-primary-lg:hover { background: #9BAFE1; }
+    /* Paired CTAs - buy it now, or talk to us first. The -lg variant matches
+       .btn-primary-lg so the two buttons line up in the larger sections. */
+    .cta-pair { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .btn-secondary-on-dark { display: inline-block; background: transparent; color: #fff; padding: .75rem 2rem; border: 1px solid hsla(0,0%,100%,.5); border-radius: .25rem; font-weight: 600; font-size: 1rem; transition: background .15s, border-color .15s; }
+    .btn-secondary-on-dark:hover { background: hsla(0,0%,100%,.1); border-color: #fff; }
+    .btn-secondary-on-dark-lg { display: inline-block; background: transparent; color: #fff; padding: 1rem 2.5rem; border: 1px solid hsla(0,0%,100%,.5); border-radius: .25rem; font-weight: 600; font-size: 1.125rem; transition: background .15s, border-color .15s; }
+    .btn-secondary-on-dark-lg:hover { background: hsla(0,0%,100%,.1); border-color: #fff; }
 
-    .label-sm { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: #D72B2B; margin-bottom: 1rem; }
+    .label-sm { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: #1E305F; margin-bottom: 1rem; }
+    /* Same label on the dark sections needs the light tint to stay legible. */
+    .grid-dark-section .label-sm { color: #7F98D7; }
     .section-h2-dark { font-size: 1.875rem; font-weight: 700; color: #1a1a1a; line-height: 1.25; margin-bottom: 0; }
     .section-h2-light { font-size: 1.875rem; font-weight: 700; color: #fff; line-height: 1.25; }
     @media (min-width: 768px) {
@@ -65,25 +80,25 @@
 
     .features-grid { display: grid; gap: 1.5rem; }
     @media (min-width: 768px) { .features-grid { grid-template-columns: repeat(3, 1fr); } }
-    .feature-card { background: #fff; border-left: 4px solid #D72B2B; border-radius: .25rem; padding: 1.5rem; box-shadow: 0 1px 2px 0 rgba(0,0,0,.05); }
+    .feature-card { background: #fff; border-left: 4px solid #1E305F; border-radius: .25rem; padding: 1.5rem; box-shadow: 0 1px 2px 0 rgba(0,0,0,.05); }
     .feature-card h3 { font-weight: 700; font-size: 1.125rem; color: #1a1a1a; margin-bottom: .75rem; }
     .feature-card p { color: #1a1a1a; line-height: 1.625; font-size: 1rem; }
 
     .process-grid { display: grid; gap: 2rem; }
     @media (min-width: 768px) { .process-grid { grid-template-columns: repeat(3, 1fr); } }
     .process-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 1.5rem; }
-    .process-circle { width: 5rem; height: 5rem; border-radius: 50%; border: 2px solid #D72B2B; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 1.25rem; background-color: rgba(10,22,40,.85); flex-shrink: 0; }
-    .process-circle .phase { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: #D72B2B; }
+    .process-circle { width: 5rem; height: 5rem; border-radius: 50%; border: 2px solid #7F98D7; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 1.25rem; background-color: rgba(10,22,40,.85); flex-shrink: 0; }
+    .process-circle .phase { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: #7F98D7; }
     .process-circle .num { font-size: 1.25rem; font-weight: 700; color: #fff; }
     .process-step h3 { font-weight: 700; font-size: 1.125rem; color: #fff; margin-bottom: .75rem; }
     .process-step p { font-size: .875rem; color: #9ca3af; line-height: 1.5em; }
-    .mobile-arrow { display: block; color: #D72B2B; font-size: 1.25rem; margin-bottom: 1rem; }
+    .mobile-arrow { display: block; color: #7F98D7; font-size: 1.25rem; margin-bottom: 1rem; }
     @media (min-width: 768px) { .mobile-arrow { display: none; } }
 
     .testimonials-grid { display: grid; gap: 1.5rem; }
     @media (min-width: 768px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
-    .testimonial-card { background: #fff; border-radius: .25rem; padding: 1.5rem; box-shadow: 0 1px 2px 0 rgba(0,0,0,.05); border-top: 4px solid #D72B2B; display: flex; flex-direction: column; }
-    .testimonial-industry { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: #D72B2B; margin-bottom: .75rem; }
+    .testimonial-card { background: #fff; border-radius: .25rem; padding: 1.5rem; box-shadow: 0 1px 2px 0 rgba(0,0,0,.05); border-top: 4px solid #1E305F; display: flex; flex-direction: column; }
+    .testimonial-industry { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: #1E305F; margin-bottom: .75rem; }
     .testimonial-quote { color: #1a1a1a; font-style: italic; flex: 1; margin-bottom: 1rem; font-size: .875rem; line-height: 1.4em; }
     .testimonial-divider { border-top: 1px solid #f3f4f6; padding-top: .75rem; }
     .testimonial-name { font-weight: 700; color: #1a1a1a; font-size: .875rem; }
@@ -96,7 +111,7 @@
     .faq-item { border-bottom: 1px solid #f3f4f6; }
     .faq-btn { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; text-align: left; gap: 1rem; background: none; border: none; }
     .faq-question { font-weight: 600; color: #1a1a1a; font-size: .875rem; line-height: 1.375; }
-    .faq-icon { color: #D72B2B; font-size: 1.25rem; flex-shrink: 0; transition: transform .2s; line-height: 1; }
+    .faq-icon { color: #1E305F; font-size: 1.25rem; flex-shrink: 0; transition: transform .2s; line-height: 1; }
     .faq-answer { display: none; padding-bottom: 1rem; font-size: .875rem; color: #4b5563; line-height: 1.625; }
     .faq-item.open .faq-answer { display: block; }
     .faq-item.open .faq-icon { transform: rotate(45deg); }
@@ -106,9 +121,9 @@
     .founder-name { font-weight: 700; color: #1a1a1a; font-size: .875rem; }
     .founder-title { font-size: .75rem; color: #6b7280; }
     .about-body { color: #1a1a1a; margin-bottom: 1rem; line-height: 1.5em; }
-    .about-quote { border-left: 4px solid #D72B2B; padding-left: 1.25rem; margin-top: 2rem; }
+    .about-quote { border-left: 4px solid #1E305F; padding-left: 1.25rem; margin-top: 2rem; }
     .about-quote p { color: #1a1a1a; font-style: italic; font-weight: 500; line-height: 1.5em; }
-    .about-quote span { display: block; color: #D72B2B; font-size: .875rem; font-weight: 600; margin-top: .75rem; }
+    .about-quote span { display: block; color: #1E305F; font-size: .875rem; font-weight: 600; margin-top: .75rem; }
 
     footer { background: #fff; border-top: 1px solid #e5e7eb; }
     .footer-inner { max-width: 72rem; margin: 0 auto; padding: 3rem 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
@@ -193,7 +208,7 @@
             "name": "What is The CFO Agent?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The CFO Agent is an AI CFO assistant built for CFOs and finance leaders at mid-market companies. It automates month-end close, variance reporting, cash flow forecasting, and board prep — giving finance teams real-time financial intelligence so they can focus on decisions, not data collection."
+              "text": "The CFO Agent is an AI CFO assistant built for CFOs and finance leaders at mid-market companies. It automates month-end close, variance reporting, cash flow forecasting, and board prep, giving finance teams real-time financial intelligence so they can focus on decisions, not data collection."
             }
           },
           {
@@ -209,7 +224,7 @@
             "name": "How is The CFO Agent different from a fractional CFO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A fractional CFO works 10-20 hours a month. The CFO Agent runs 24 hours a day. It handles the repeatable, data-intensive work that would otherwise consume your team's time — variance analysis, close checklists, cash forecasting, board prep. The fractional CFO does strategy. The CFO Agent does execution."
+              "text": "A fractional CFO works 10-20 hours a month. The CFO Agent runs 24 hours a day. It handles the repeatable, data-intensive work that would otherwise consume your team's time: variance analysis, close checklists, cash forecasting, board prep. The fractional CFO does strategy. The CFO Agent does execution."
             }
           },
           {
@@ -239,7 +254,7 @@
 <header>
   <div class="nav-wrap">
     <a class="nav-logo" href="/" aria-label="The CFO Agent home">
-      <img src="/images/the-cfo-agent-logo.png" alt="The CFO Agent" style="width:280px;height:auto;" />
+      <img src="/images/the-cfo-agent-wordmark.svg" alt="The CFO Agent" style="width:300px;height:auto;" />
     </a>
     <nav class="desktop">
       <a href="#how-it-works">The Process</a>
@@ -247,7 +262,8 @@
       <a href="#pricing">Investment</a>
       <a href="#faq">FAQ</a>
       <a href="#about">About</a>
-      <a href="https://cal.com/therealdaveo/apollo-claw" target="_blank" rel="noopener noreferrer" class="btn-demo">Book a Demo</a>
+      <a href="https://cal.com/therealdaveo/apollo-claw" target="_blank" rel="noopener noreferrer">Schedule a Consultation</a>
+      <a href="https://www.apolloclaw.ai/build/cfo" class="btn-demo">Build Your Agent</a>
     </nav>
     <button class="mobile-menu-btn" aria-label="Menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -261,9 +277,10 @@
     <div class="section-inner" style="text-align: center;">
       <p class="hero-label">AI Financial Intelligence for CFOs</p>
       <h1>The AI for CFOs<br>Who Need Real Intelligence,<br>Not More Reports.</h1>
-      <p>The CFO Agent gives CFOs and finance leaders real-time financial intelligence, automated reporting, and faster close cycles — so your team spends less time on data and more time on decisions.</p>
-      <div style="display:flex;justify-content:center;">
-        <a href="https://cal.com/therealdaveo/apollo-claw" target="_blank" rel="noopener noreferrer" class="btn-primary">Schedule Your Consultation</a>
+      <p>The CFO Agent gives CFOs and finance leaders real-time financial intelligence, automated reporting, and faster close cycles, so your team spends less time on data and more time on decisions.</p>
+      <div class="cta-pair">
+        <a href="https://www.apolloclaw.ai/build/cfo" class="btn-primary">Build Your Agent</a>
+        <a href="https://cal.com/therealdaveo/apollo-claw" target="_blank" rel="noopener noreferrer" class="btn-secondary-on-dark">Schedule Your Consultation</a>
       </div>
     </div>
   </section>
@@ -274,7 +291,7 @@
       <h2 class="section-h2-dark" style="margin-bottom: 2rem;">Finance Teams Spend Too Much Time on Data, Not Enough on Decisions</h2>
       <div class="value-body">
         <p>The average finance team spends 60% of its time collecting and cleaning data. What's left for the analysis that actually drives decisions? Not enough.</p>
-        <p>The CFO Agent connects to your ERP, accounting system, and reporting tools to automate the grunt work — variance pulls, close checklists, board prep, and cash flow forecasting — so your team can do the work that actually matters.</p>
+        <p>The CFO Agent connects to your ERP, accounting system, and reporting tools to automate the grunt work (variance pulls, close checklists, board prep, and cash flow forecasting) so your team can do the work that actually matters.</p>
       </div>
     </div>
   </section>
@@ -287,7 +304,7 @@
         <p style="font-size:1.125rem; color:#1a1a1a; margin-top:1rem; max-width:56rem; margin-left:auto; margin-right:auto;">Custom-connected to your systems. Trained on your reporting cadence. Running from day one.</p>
       </div>
       <div class="features-grid">
-        <div class="feature-card"><h3>Month-End Close Automation</h3><p>Runs your close checklist, flags open items, reconciles accounts, and surfaces variances before the deadline — not after.</p></div>
+        <div class="feature-card"><h3>Month-End Close Automation</h3><p>Runs your close checklist, flags open items, reconciles accounts, and surfaces variances before the deadline, not after.</p></div>
         <div class="feature-card"><h3>Variance Analysis</h3><p>Pulls actuals versus budget, flags anomalies, and drafts the narrative your board expects. Ready before your first review meeting.</p></div>
         <div class="feature-card"><h3>Cash Flow Forecasting</h3><p>Models 13-week and rolling cash positions using your live AR, AP, and payroll data. Flags coverage gaps before they become problems.</p></div>
         <div class="feature-card"><h3>Board and Investor Prep</h3><p>Compiles the financial package, drafts commentary, and formats the deck. You review and present. Everything else is handled.</p></div>
@@ -356,7 +373,7 @@
           </div>
           <div class="testimonial-card">
             <p class="testimonial-industry">Healthcare</p>
-            <p class="testimonial-quote">"Revenue cycle is complicated. Denials, adjustments, lag — it makes your P&amp;L look different every time you run it. The CFO Agent flags unusual patterns in our AR before they affect reporting. We caught a billing issue 3 weeks earlier than we would have. That saved us real money."</p>
+            <p class="testimonial-quote">"Revenue cycle is complicated. Denials, adjustments, lag. It makes your P&amp;L look different every time you run it. The CFO Agent flags unusual patterns in our AR before they affect reporting. We caught a billing issue 3 weeks earlier than we would have. That saved us real money."</p>
             <div class="testimonial-divider"><p class="testimonial-name">Controller, Multi-Site Medical Group</p><p class="testimonial-detail">8 locations, $22M net revenue</p></div>
           </div>
           <div class="testimonial-card">
@@ -374,8 +391,12 @@
     <div class="section-inner" style="text-align:center;">
       <p class="label-sm">Investment</p>
       <h2 class="section-h2-light" style="margin-bottom:1.5rem;">Built for Finance Leaders Who Need More Than a Tool</h2>
-      <p class="investment-body">Every CFO Agent deployment is custom-scoped to your finance stack and reporting requirements. Pricing is discussed during your consultation based on your systems, integrations, and team size.</p>
-      <a href="https://cal.com/therealdaveo/apollo-claw" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top:2.5rem;">Schedule Your Consultation</a>
+      <p class="investment-body">Two ways to start. Build your agent yourself in about fifteen minutes, or have us scope and configure it around your finance stack on a call.</p>
+      <div class="cta-pair" style="margin-top:2.5rem;">
+        <a href="https://www.apolloclaw.ai/build/cfo" class="btn-primary-lg">Build Your Agent</a>
+        <a href="https://cal.com/therealdaveo/apollo-claw" target="_blank" rel="noopener noreferrer" class="btn-secondary-on-dark-lg">Schedule Your Consultation</a>
+      </div>
+      <p style="font-size:.875rem; color:#9ca3af; margin-top:1.5rem;">Custom deployments are scoped to your ERP, integrations, and reporting complexity, and priced during your consultation.</p>
     </div>
   </section>
 
@@ -430,7 +451,7 @@
                 <span class="faq-question">What does it cost?</span>
                 <span class="faq-icon">+</span>
               </button>
-              <div class="faq-answer">Every engagement is custom-scoped based on your systems and reporting complexity. Book a consultation and we will give you a precise number within 48 hours.</div>
+              <div class="faq-answer">There are two ways to start. You can build your agent yourself online and see the price before you pay anything. For a custom deployment scoped to your ERP, integrations, and reporting complexity, book a consultation and we will give you a precise number within 48 hours.</div>
             </div>
           </div>
         </div>
@@ -444,10 +465,10 @@
         <p class="label-sm">The Story</p>
         <h2 class="section-h2-dark" style="margin-bottom:1.5rem;">One Founder. Eighteen Years. One Unavoidable Conclusion.</h2>
         <div class="founder-row">
-          <img src="https://theceoagent.ai/images/david-headshot.jpg" alt="David Oralevich, Founder" class="founder-img" />
+          <img src="/images/david-headshot.jpg" alt="David Oralevich, Founder" class="founder-img" />
           <div>
             <p class="founder-name">David Oralevich</p>
-            <p class="founder-title">Founder, Apollo Claw — Long Island, NY</p>
+            <p class="founder-title">Founder, Apollo Claw, Long Island, NY</p>
           </div>
         </div>
         <p class="about-body">David Oralevich has spent his career at the edge of what is next. He rode the first wave of the internet in the late 90s, built Designs By Dave O. in 2007, and spent nearly two decades helping businesses compete and grow in a digital world.</p>
@@ -457,7 +478,7 @@
         <p class="about-body" style="margin-bottom:2rem;">Every engagement is handled in-house, on Long Island, New York. No offshore teams. No outsourced builds. When you work with us, you work with us.</p>
         <div class="about-quote">
           <p>"Every revolution has an early chapter. The finance leaders who read it first write the rest of the story."</p>
-          <span>David Oralevich, Founder &amp; Chief Visionary Officer — Apollo Claw</span>
+          <span>David Oralevich, Founder &amp; Chief Visionary Officer, Apollo Claw</span>
         </div>
       </div>
     </section>
@@ -467,8 +488,11 @@
     <div class="section-inner">
       <p class="label-sm">Get Started</p>
       <h2 style="font-size:1.875rem; font-weight:700; margin-bottom:1.5rem; line-height:1.25; color:#fff;">Ready to Meet Your AI Finance Agent?</h2>
-      <p style="font-size:1.125rem; color:#e5e7eb; margin-bottom:2.5rem; line-height:1.625;">Schedule a 30-minute consultation. We will show you exactly how The CFO Agent would be configured for your finance team.</p>
-      <a href="https://cal.com/therealdaveo/apollo-claw" target="_blank" rel="noopener noreferrer" class="btn-primary-lg">Schedule Your Consultation</a>
+      <p style="font-size:1.125rem; color:#e5e7eb; margin-bottom:2.5rem; line-height:1.625;">Build your agent online in about fifteen minutes, or schedule a 30-minute consultation and we will show you exactly how The CFO Agent would be configured for your finance team.</p>
+      <div class="cta-pair">
+        <a href="https://www.apolloclaw.ai/build/cfo" class="btn-primary-lg">Build Your Agent</a>
+        <a href="https://cal.com/therealdaveo/apollo-claw" target="_blank" rel="noopener noreferrer" class="btn-secondary-on-dark-lg">Schedule Your Consultation</a>
+      </div>
     </div>
   </section>
 
