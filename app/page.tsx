@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import { Footer } from "./components/Footer";
 import { Label } from "./components/PageHero";
 import { CtaPair, ClosingCta } from "./components/Cta";
+import { Hero } from "./components/Hero";
 import { FAQ } from "./components/FAQ";
 import { CAPABILITIES, PROCESS, TESTIMONIALS, FAQS } from "@/lib/content";
 import { AUDIENCES, SITE_URL } from "@/lib/site";
@@ -27,27 +28,12 @@ export default function Home() {
       />
       <Nav />
       <main>
-        {/* HERO */}
-        <section className="grid-dark-section py-28">
-          <div className="max-w-6xl mx-auto px-6 text-center">
-            <p className="text-xs uppercase tracking-widest text-brand-tint font-semibold mb-6">
-              AI Financial Intelligence for CFOs
-            </p>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
-              The AI for CFOs
-              <br />
-              Who Need Real Intelligence,
-              <br />
-              Not More Reports.
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-              The CFO Agent gives finance leaders real-time financial intelligence,
-              automated reporting, and faster close cycles, so your team spends less time
-              on data and more time on decisions.
-            </p>
-            <CtaPair on="dark" />
-          </div>
-        </section>
+        <Hero
+          badge="Apollo[Claw] CFO Edition"
+          title="Real intelligence. Not more reports."
+          punch="The CFO Agent. More Than AI. Your Personal Operating System."
+          sub="The CFO Agent gives finance leaders real-time financial intelligence, automated reporting, and faster close cycles, so your team spends less time on data and more time on decisions. It learns your close cadence, your chart of accounts, and what your board actually reads."
+        />
 
         {/* THE ARGUMENT */}
         <section className="bg-cream py-16">
