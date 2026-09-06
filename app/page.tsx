@@ -33,6 +33,8 @@ export default function Home() {
           title="Real intelligence. Not more reports."
           punch="The CFO Agent. More Than AI. Your Personal Operating System."
           sub="The CFO Agent gives finance leaders real-time financial intelligence, automated reporting, and faster close cycles, so your team spends less time on data and more time on decisions. It learns your close cadence, your chart of accounts, and what your board actually reads."
+          mascot="/images/the-cfo-agent-mascot-transparent.png"
+          mascotAlt="The CFO Agent mascot"
         />
 
         {/* THE ARGUMENT */}
