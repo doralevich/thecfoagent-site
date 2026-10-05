@@ -30,10 +30,10 @@ export const CAPABILITIES = [
 
 export const PROCESS = [
   {
-    phase: "Day 1",
+    phase: "15 min",
     num: "01",
-    title: "We Map Your Finance Stack",
-    body: "We connect your ERP, accounting platform, and reporting tools. We learn your close cadence, your chart of accounts, and what your board actually wants to see.",
+    title: "You Tell It Your Finance Stack",
+    body: "Your ERP, accounting platform and reporting tools, your close cadence, your chart of accounts, and what your board wants to see. That is the questionnaire, and your agent is built from it and running in about fifteen minutes.",
   },
   {
     phase: "Week 1",
@@ -45,7 +45,7 @@ export const PROCESS = [
     phase: "Month 1+",
     num: "03",
     title: "It Gets Sharper Over Time",
-    body: "The agent learns your business seasonality, your board's preferences, and your team's workflows. Most finance leaders report cutting close time by 30-40% within 60 days.",
+    body: "The agent learns your business seasonality, your board's preferences, and your team's workflows, and each close runs smoother than the last.",
   },
 ];
 
@@ -105,7 +105,7 @@ export const FAQS = [
   },
   {
     q: "How long does implementation take?",
-    a: "Most clients are fully operational within two weeks. We handle all integrations and configuration. Your team needs to show up to an onboarding call and walk us through your close process.",
+    a: "About fifteen minutes. The questionnaire is the configuration: your ERP and reporting tools, your close cadence, and what your board wants to see. Your agent is built from it and running as soon as you connect your systems. Hands-on onboarding and 30 days of training are available as an add-on, and come with every custom deployment.",
   },
   {
     q: "Is our financial data secure?",
