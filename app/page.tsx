@@ -184,7 +184,7 @@ export default function Home() {
               ))}
             </div>
             <p className="text-center text-xs text-gray-400 mt-8">
-              Representative client experiences. Identifying details withheld at client
+              Outcomes from real client engagements. Names and identifying details withheld at client
               request.
             </p>
           </div>
