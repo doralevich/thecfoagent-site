@@ -29,6 +29,7 @@ export const AUDIENCES = [
   { slug: "for-controllers", label: "For Controllers" },
   { slug: "for-private-equity", label: "For PE-Backed Companies" },
   { slug: "for-multi-entity", label: "For Multi-Entity Finance" },
+  { slug: "for-accounting-firms", label: "For Accounting and Tax Firms" },
 ];
 
 /** Breadcrumb JSON-LD for an interior page. */

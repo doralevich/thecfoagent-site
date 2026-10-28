@@ -23,7 +23,15 @@ export const metadata: Metadata = pageMeta({
 const STACK = [
   {
     title: "Your ERP and Accounting Platform",
-    body: "QuickBooks, NetSuite, Sage, and others. The agent reads where the platform allows it and writes only where you want it to, so your ledger stays the source of truth.",
+    body: "QuickBooks Online, QuickBooks Desktop, Xero, NetSuite, Sage, and others. The agent reads where the platform allows it and writes only where you want it to, so your ledger stays the source of truth. QuickBooks Desktop connects through a secure connector on your machine or server.",
+  },
+  {
+    title: "Your Tax and Practice Software",
+    body: "UltraTax, CCH Axcess, ProSeries, Drake, TaxDome, Canopy, and similar. The agent works at the workflow layer: it prepares import-ready data, tracks status, and handles the communication around the return. How deep we connect depends on the platform and your version, and we confirm it before we build.",
+  },
+  {
+    title: "Your Email, Calendar, and Documents",
+    body: "Google Workspace, Microsoft 365, Slack, and your CRM. This is where the agent talks to your team and your clients, and where it keeps the follow-ups you would otherwise have to remember.",
   },
   {
     title: "Your Banking and AR/AP Feeds",

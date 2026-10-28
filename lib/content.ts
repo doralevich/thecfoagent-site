@@ -97,7 +97,15 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     q: "What systems does the CFO Agent connect to?",
-    a: "We connect to your ERP, accounting platform (QuickBooks, NetSuite, Sage, and others), banking feeds, payroll systems, and any reporting tools your team already uses. We build to your stack, not the other way around.",
+    a: "We connect to your ledger (QuickBooks Online, Xero, NetSuite, Sage, and others), your banking and payroll feeds, and the email, calendar, and document tools your team already uses. QuickBooks Desktop connects through a secure connector on your machine or server. Tax and practice software works at the workflow and data layer: import-ready files, exports, and scheduled hand-offs. We confirm how deep each connection goes, for your exact platforms and versions, before we build.",
+  },
+  {
+    q: "Does it work for accounting and tax firms?",
+    a: "Yes. For a firm, the agent takes the repetitive admin layer: document intake and classification, chasing clients for records, drafting routine communications, and keeping filing calendars with deadline alerts. Anything that needs professional judgment, like a tax position or client advice, goes to a person for review. It works around your tax and practice software rather than inside the return itself.",
+  },
+  {
+    q: "Which AI model does it run on, and where does it live?",
+    a: "You pick the model: Claude, GPT, Gemini, or Grok. The agent runs on a private server you control, either a private virtual server or a Mac mini on your own network, and it keeps a compounding memory of your context so it gets more useful every month.",
   },
   {
     q: "How is this different from hiring a fractional CFO?",

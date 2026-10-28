@@ -237,6 +237,69 @@ export const AUDIENCE_PAGES: Audience[] = [
       body: "Book a consultation and we will scope it around your entity structure, your systems, and how your consolidation actually works today.",
     },
   },
+  {
+    slug: "for-accounting-firms",
+    label: "For Accounting and Tax Firms",
+    eyebrow: "For Accounting and Tax Firms",
+    title: "Busy Season Does Not Fail on Expertise. It Fails on the Admin.",
+    intro:
+      "Your people know the work. The hours go to chasing records, sorting documents, and remembering deadlines. The CFO Agent takes that admin layer and hands every judgment call back to a person.",
+    metaTitle: "AI Agent for Accounting and Tax Firms",
+    metaDescription:
+      "A private AI agent for accounting and tax firms. Document intake, client record chasing, filing calendars with deadline alerts, and routine drafts, with every judgment call routed to a person.",
+    keywords: [
+      "AI for accounting firms",
+      "AI agent for CPA firms",
+      "tax practice automation",
+      "client document chasing automation",
+      "AI chief of staff for accountants",
+    ],
+    problem: {
+      heading: "The Expensive Hours Are Spent on the Cheap Work",
+      body: [
+        "A partner's judgment is the product. But the week fills up with missing bank statements, unsigned engagement letters, organizers that never come back, and a deadline calendar kept in three places.",
+        "None of that needs a licensed professional. All of it has to happen, on time, for every client. That is exactly the layer an agent can run, while the people who hold the license keep the decisions.",
+      ],
+    },
+    benefits: [
+      {
+        title: "Document Intake and Classification",
+        body: "Client files arrive, get sorted by type, and show up as a clean list of what came in, from whom, and what is still missing.",
+      },
+      {
+        title: "Client Chasing That Does Not Depend on Memory",
+        body: "The agent follows up for records and invoices in your voice, tracks who has replied, and tells you who has not. You approve what goes out.",
+      },
+      {
+        title: "Filing Calendars With Deadline Alerts",
+        body: "Alerts at 14 days, 7 days, and 48 hours before each filing deadline, so nothing is discovered the night before.",
+      },
+      {
+        title: "Reconciliation and Document-to-Ledger",
+        body: "Receipts and invoices get read, categorized, and matched against the ledger. Exceptions come to you with a reason, not a pile.",
+      },
+      {
+        title: "Routine Communications, Drafted",
+        body: "Engagement reminders, organizer requests, and status updates arrive as drafts. A person reviews before anything is sent.",
+      },
+      {
+        title: "Tax Change Watch",
+        body: "Regulatory updates that touch your client base get summarized and flagged, with the source linked, so you decide what matters.",
+      },
+      {
+        title: "Cash, Close, and Payroll Compliance",
+        body: "The financial operations side: a 13-week cash view, close tasks, AR follow-up, and payroll deadline monitoring, for your firm or for the clients you run the books for.",
+      },
+      {
+        title: "Two Agents, Clean Boundaries",
+        body: "The CFO Agent keeps financial operations. A separate tax operations agent, built for your firm, can own return status, e-file tracking, and notice handling. Each keeps its own memory and its own limits.",
+      },
+    ],
+    closing: {
+      heading: "Start With One Workflow",
+      body: "Book a consultation and we will map your software, pick the one workflow with the clearest payoff, and tell you plainly what the agent can and cannot do in your setup.",
+    },
+  },
 ];
 
 export function getAudience(slug: string) {
